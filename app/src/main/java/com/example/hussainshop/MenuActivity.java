@@ -10,6 +10,9 @@ public class MenuActivity extends AppCompatActivity {
     int card1Count=0;
     int card2Count=0;
     int card3Count=0;
+    double price;
+    TextView textViewPriceTotal;
+    TextView textViewPrice;
 
     TextView textViewQuantity;
     TextView textViewQuantityc2;
@@ -22,13 +25,24 @@ public class MenuActivity extends AppCompatActivity {
         textViewQuantity =(TextView)findViewById(R.id.textViewQuantity);
         textViewQuantityc2 = findViewById(R.id.textViewQuantityc2);
         getTextViewQuantityc3 = findViewById(R.id.textViewQuantityc3);
+        textViewPriceTotal = findViewById(R.id.textTotalPrice);
+        textViewPrice = findViewById(R.id.txtPrice);
+
     }
 
     public void addQuantity(View view) {
+
         card1Count++;
         if(textViewQuantity!=null)
             textViewQuantity.setText(Integer.toString(card1Count));
+        price= Double.parseDouble(textViewPrice.getText().toString())* card1Count;
+        textViewPriceTotal.setText(Double.toString(price));
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     public void subtractQuantity(View view) {
@@ -39,6 +53,8 @@ public class MenuActivity extends AppCompatActivity {
        --card1Count;
         if(textViewQuantity!=null ){
             textViewQuantity.setText(Integer.toString(card1Count));
+            price= Double.parseDouble(textViewPrice.getText().toString())* card1Count;
+            textViewPriceTotal.setText(Double.toString(price));
         }
     }
 
@@ -63,6 +79,7 @@ public class MenuActivity extends AppCompatActivity {
         if(getTextViewQuantityc3!=null)
             getTextViewQuantityc3.setText(Integer.toString(card3Count));
     }
+
 
 
 }

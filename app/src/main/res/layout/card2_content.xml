@@ -71,24 +71,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="56dp"
+            android:onClick="subtractQuantityc2"
             android:text="@string/removeQty"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewQty"
-            android:onClick="subtractQuantityc2"/>
+            app:layout_constraintTop_toBottomOf="@+id/textViewQty" />
 
         <Button
             android:id="@+id/btnAddc2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="52dp"
             android:layout_marginEnd="176dp"
             android:onClick="addQuantityc2"
             android:text="@string/addQty"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/btnSubtractc2"
             app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Price"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubtractc2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQty"
+            app:layout_constraintVertical_bias="0.38" />
+
+        <TextView
+            android:id="@+id/textViewTotalPriceC2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="8dp"
+            android:text="0.00"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddc2"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc2"
+            app:layout_constraintVertical_bias="0.48" />
 
 
     </android.support.constraint.ConstraintLayout>
