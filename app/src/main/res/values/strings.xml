@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HussainShop</string>
+    <string name="lblPrice">Price</string>
+    <string name="price">12.99</string>
+    <string name="lblQuantity">Quantity</string>
+    <string name="amountofItems">0</string>
+    <string name="removeQty">-</string>
+    <string name="addQty">+</string>
+</resources>
