@@ -10,13 +10,19 @@ public class MenuActivity extends AppCompatActivity {
     int card1Count=0;
     int card2Count=0;
     int card3Count=0;
-    double price;
+    double priceCard1;
     TextView textViewPriceTotal;
     TextView textViewPrice;
-
+    double priceCard2;
+    TextView textViewPriceC2;
+    TextView textViewPriceTotalC2;
     TextView textViewQuantity;
     TextView textViewQuantityc2;
-    TextView getTextViewQuantityc3;
+    TextView textViewQuantityc3;
+
+    double priceCard3;
+    TextView textViewPriceC3;
+    TextView textViewPriceTotalC3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +30,13 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         textViewQuantity =(TextView)findViewById(R.id.textViewQuantity);
         textViewQuantityc2 = findViewById(R.id.textViewQuantityc2);
-        getTextViewQuantityc3 = findViewById(R.id.textViewQuantityc3);
+        textViewQuantityc3 = findViewById(R.id.textViewQuantityc3);
         textViewPriceTotal = findViewById(R.id.textTotalPrice);
         textViewPrice = findViewById(R.id.txtPrice);
+        textViewPriceTotalC2 = findViewById(R.id.textViewTotalPriceC2);
+        textViewPriceC2 = findViewById(R.id.txtPriceC2);
+        textViewPriceTotalC3= findViewById(R.id.textViewPriceTotalC3);
+        textViewPriceC3 = findViewById(R.id.txtPriceC3);
 
     }
 
@@ -35,8 +45,8 @@ public class MenuActivity extends AppCompatActivity {
         card1Count++;
         if(textViewQuantity!=null)
             textViewQuantity.setText(Integer.toString(card1Count));
-        price= Double.parseDouble(textViewPrice.getText().toString())* card1Count;
-        textViewPriceTotal.setText(Double.toString(price));
+        priceCard1= Double.parseDouble(textViewPrice.getText().toString())* card1Count;
+        textViewPriceTotal.setText(Double.toString(priceCard1));
 
     }
 
@@ -53,8 +63,8 @@ public class MenuActivity extends AppCompatActivity {
        --card1Count;
         if(textViewQuantity!=null ){
             textViewQuantity.setText(Integer.toString(card1Count));
-            price= Double.parseDouble(textViewPrice.getText().toString())* card1Count;
-            textViewPriceTotal.setText(Double.toString(price));
+            priceCard1= Double.parseDouble(textViewPrice.getText().toString())* card1Count;
+            textViewPriceTotal.setText(Double.toString(priceCard1));
         }
     }
 
@@ -62,22 +72,31 @@ public class MenuActivity extends AppCompatActivity {
         ++card2Count;
         if(textViewQuantityc2!=null)
             textViewQuantityc2.setText(Integer.toString(card2Count));
+        textViewQuantityc2.setText(Integer.toString(card2Count));
+        priceCard2= Double.parseDouble(textViewPriceC2.getText().toString())* card2Count;
+        textViewPriceTotalC2.setText(Double.toString(priceCard2));
     }
     public void subtractQuantityc2(View view) {
         --card2Count;
         if(textViewQuantityc2!=null)
             textViewQuantityc2.setText(Integer.toString(card2Count));
+        priceCard2= Double.parseDouble(textViewPriceC2.getText().toString())* card2Count;
+        textViewPriceTotalC2.setText(Double.toString(priceCard2));
     }
     public void subtractQuantityC3(View view) {
         --card3Count;
-        if(getTextViewQuantityc3!=null)
-            getTextViewQuantityc3.setText(Integer.toString(card3Count));
+        if(textViewQuantityc3!=null)
+           textViewQuantityc3.setText(Integer.toString(card3Count));
+        priceCard3= Double.parseDouble(textViewPriceC3.getText().toString())* card3Count;
+        textViewPriceTotalC3.setText(Double.toString(priceCard3));
     }
 
     public void addQuantityC3(View view) {
         card3Count++;
-        if(getTextViewQuantityc3!=null)
-            getTextViewQuantityc3.setText(Integer.toString(card3Count));
+        if(textViewQuantityc3!=null)
+            textViewQuantityc3.setText(Integer.toString(card3Count));
+        priceCard3= Double.parseDouble(textViewPriceC3.getText().toString())* card3Count;
+        textViewPriceTotalC3.setText(Double.toString(priceCard3));
     }
 
 

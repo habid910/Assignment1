@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageViewChicken" />
 
         <TextView
-            android:id="@+id/txtPrice"
+            android:id="@+id/txtPriceC2"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:layout_marginStart="8dp"
@@ -64,7 +64,7 @@
             android:text="@string/amountofItems"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPriceC2" />
 
         <Button
             android:id="@+id/btnSubtractc2"
@@ -98,7 +98,7 @@
             android:layout_marginStart="44dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Price"
+            android:text="Total"
             app:layout_constraintBottom_toTopOf="@+id/btnSubtractc2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewQty"
@@ -109,9 +109,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="0.00"
             app:layout_constraintBottom_toTopOf="@+id/btnAddc2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.091"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc2"
             app:layout_constraintVertical_bias="0.48" />

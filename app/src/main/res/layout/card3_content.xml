@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageViewChicken" />
 
         <TextView
-            android:id="@+id/txtPrice"
+            android:id="@+id/txtPriceC3"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:layout_marginStart="8dp"
@@ -64,25 +64,25 @@
             android:text="@string/amountofItems"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPriceC3" />
 
         <Button
             android:id="@+id/btnSubtract"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="52dp"
+            android:onClick="subtractQuantityC3"
             android:text="@string/removeQty"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewQty"
-            android:onClick="subtractQuantityC3"/>
+            app:layout_constraintTop_toBottomOf="@+id/textViewQty" />
 
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="8dp"
             android:onClick="addQuantityC3"
             android:text="@string/addQty"
@@ -90,6 +90,32 @@
             app:layout_constraintHorizontal_bias="0.022"
             app:layout_constraintStart_toEndOf="@+id/btnSubtract"
             app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc3" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Total"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubtract"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQty"
+            app:layout_constraintVertical_bias="0.555" />
+
+        <TextView
+            android:id="@+id/textViewPriceTotalC3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="0.00"
+            app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc3"
+            app:layout_constraintVertical_bias="0.692" />
 
 
     </android.support.constraint.ConstraintLayout>
