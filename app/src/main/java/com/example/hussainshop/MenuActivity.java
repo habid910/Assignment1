@@ -1,5 +1,6 @@
 package com.example.hussainshop;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -100,5 +101,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-
+    public void CheckOut(View view) {
+        Intent intent = new Intent(this,CheckoutActivity.class);
+        intent.putExtra("Quantity",Integer.parseInt(textViewQuantity.getText().toString()));
+    }
 }

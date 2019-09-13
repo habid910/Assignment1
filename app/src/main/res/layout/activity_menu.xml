@@ -12,15 +12,37 @@
        android:orientation="vertical">
 
 
-    <include
-        layout="@layout/card1_content"
-        />
+
+       <include
+           layout="@layout/card1_content"
+           android:layout_width="407dp"
+           android:layout_height="368dp" />
+
        <include
            layout="@layout/card2_content"
            />
+
+
+
        <include
            layout="@layout/card3_content"
-           />
+           android:layout_height="333dp" />
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
 
-</LinearLayout>
+
+
+               <Button
+                   android:id="@+id/button_checkout"
+                   android:layout_width="225dp"
+                   android:layout_height="70dp"
+                   android:layout_marginEnd="8dp"
+                   android:text="Checkout"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   android:onClick="CheckOut"/>
+
+       </LinearLayout>
+   </LinearLayout>
 </ScrollView>
