@@ -3,6 +3,7 @@ package com.example.hussainshop;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +30,7 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        textViewQuantity =(TextView)findViewById(R.id.textViewQuantity);
+        textViewQuantity =findViewById(R.id.textViewQuantity);
         textViewQuantityc2 = findViewById(R.id.textViewQuantityc2);
         textViewQuantityc3 = findViewById(R.id.textViewQuantityc3);
         textViewPriceTotal = findViewById(R.id.textTotalPrice);
@@ -57,10 +58,6 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void subtractQuantity(View view) {
-       /* if(Integer.parseInt(textViewQuantity.getText().toString())<0){
-            Toast.makeText(this,"Invalid Quantity, please add an item.",Toast.LENGTH_SHORT);
-
-        }*/
        --card1Count;
         if(textViewQuantity!=null ){
             textViewQuantity.setText(Integer.toString(card1Count));
@@ -101,8 +98,28 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
+
     public void CheckOut(View view) {
-        Intent intent = new Intent(this,CheckoutActivity.class);
-        intent.putExtra("Quantity",Integer.parseInt(textViewQuantity.getText().toString()));
+        int total = Integer.parseInt(textViewQuantity.getText().toString())
+                    + Integer.parseInt(textViewQuantityc2.getText().toString())
+                    + Integer.parseInt(textViewQuantityc3.getText().toString());
+        int subTotal= (Integer.parseInt(textViewPrice.getText().toString())*Integer.parseInt(textViewQuantity.getText().toString()))+
+                (Integer.parseInt(textViewPriceC2.getText().toString())*Integer.parseInt(textViewQuantityc2.getText().toString()))
+                +(Integer.parseInt(textViewPriceC3.getText().toString())*Integer.parseInt(textViewPriceTotalC3.getText().toString()));
+        if (Integer.parseInt(textViewQuantity.getText().toString()) <= 0 && Integer.parseInt(textViewQuantityc2.getText().toString())<=0 && Integer.parseInt(textViewQuantityc3.getText().toString())<=0) {
+            Toast.makeText(getBaseContext(), "Invalid Quantity, please add an item.", Toast.LENGTH_LONG);
+            Log.i("msg","Toast Message");
+
+        } else{
+            Intent intent = new Intent(this, CheckoutActivity.class);
+            Bundle b =new Bundle();
+            b.putString("Quantity",String.valueOf(total));
+            Bundle bundle = new Bundle();
+            bundle.putString("SubTotal",String.valueOf(subTotal));
+            intent.putExtras(b);
+            intent.putExtras(bundle);
+            startActivity(intent);
+}
     }
 }
+
