@@ -103,9 +103,9 @@ public class MenuActivity extends AppCompatActivity {
         int total = Integer.parseInt(textViewQuantity.getText().toString())
                     + Integer.parseInt(textViewQuantityc2.getText().toString())
                     + Integer.parseInt(textViewQuantityc3.getText().toString());
-        int subTotal= (Integer.parseInt(textViewPrice.getText().toString())*Integer.parseInt(textViewQuantity.getText().toString()))+
-                (Integer.parseInt(textViewPriceC2.getText().toString())*Integer.parseInt(textViewQuantityc2.getText().toString()))
-                +(Integer.parseInt(textViewPriceC3.getText().toString())*Integer.parseInt(textViewPriceTotalC3.getText().toString()));
+       Double subTotal= (Double.parseDouble(textViewPrice.getText().toString())*Double.parseDouble(textViewQuantity.getText().toString()));
+                //(Double.parseDouble(textViewPriceC2.getText().toString())*Double.parseDouble(textViewQuantityc2.getText().toString()))
+                //+(Double.parseDouble(textViewPriceC3.getText().toString())*Double.parseDouble(textViewPriceTotalC3.getText().toString()));
         if (Integer.parseInt(textViewQuantity.getText().toString()) <= 0 && Integer.parseInt(textViewQuantityc2.getText().toString())<=0 && Integer.parseInt(textViewQuantityc3.getText().toString())<=0) {
             Toast.makeText(getBaseContext(), "Invalid Quantity, please add an item.", Toast.LENGTH_LONG);
             Log.i("msg","Toast Message");
@@ -114,10 +114,9 @@ public class MenuActivity extends AppCompatActivity {
             Intent intent = new Intent(this, CheckoutActivity.class);
             Bundle b =new Bundle();
             b.putString("Quantity",String.valueOf(total));
-            Bundle bundle = new Bundle();
-            bundle.putString("SubTotal",String.valueOf(subTotal));
+            b.putString("SubTotal",String.valueOf(subTotal));
             intent.putExtras(b);
-            intent.putExtras(bundle);
+            intent.putExtras(b);
             startActivity(intent);
 }
     }
