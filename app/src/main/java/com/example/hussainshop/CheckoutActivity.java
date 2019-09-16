@@ -18,5 +18,17 @@ public class CheckoutActivity extends AppCompatActivity {
         String subTotalDadata = b.getString("SubTotal");
         TextView subTotal = findViewById(R.id.textViewSubTotalAmount);
         subTotal.setText(subTotalDadata);
+        TextView gst= findViewById(R.id.textViewGSTAmount);
+        double totalGST= 0.05* Double.parseDouble(subTotal.getText().toString());
+        String totals= String.valueOf(totalGST);
+        gst.setText(totals);
+        TextView tvq = findViewById(R.id.textViewTVQAmount);
+        double totalTVQ= 0.09975 * Double.parseDouble(subTotal.getText().toString());
+        String totalTVQAmount = String.valueOf(totalTVQ);
+        tvq.setText(totalTVQAmount);
+        TextView totalAmount= findViewById(R.id.textViewTotalAmount);
+        double totalAmounts= totalGST +totalTVQ+Double.parseDouble(subTotal.getText().toString());
+        String finalTotal = String.valueOf(totalAmounts);
+        totalAmount.setText(finalTotal);
     }
 }

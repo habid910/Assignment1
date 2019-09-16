@@ -58,6 +58,10 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void subtractQuantity(View view) {
+        if(Integer.parseInt(textViewQuantity.getText().toString())==0){
+            card1Count=0;
+            Toast.makeText(this,"No Items To Remove.",Toast.LENGTH_LONG).show();
+        } else
        --card1Count;
         if(textViewQuantity!=null ){
             textViewQuantity.setText(Integer.toString(card1Count));
@@ -75,6 +79,10 @@ public class MenuActivity extends AppCompatActivity {
         textViewPriceTotalC2.setText(Double.toString(priceCard2));
     }
     public void subtractQuantityc2(View view) {
+        if(Integer.parseInt(textViewQuantityc2.getText().toString())==0){
+            card2Count=0;
+            Toast.makeText(this,"No Items To Remove.",Toast.LENGTH_LONG).show();
+        }else
         --card2Count;
         if(textViewQuantityc2!=null)
             textViewQuantityc2.setText(Integer.toString(card2Count));
@@ -82,6 +90,10 @@ public class MenuActivity extends AppCompatActivity {
         textViewPriceTotalC2.setText(Double.toString(priceCard2));
     }
     public void subtractQuantityC3(View view) {
+        if(Integer.parseInt(textViewQuantityc3.getText().toString())==0){
+            card3Count=0;
+            Toast.makeText(this,"No Items To Remove.",Toast.LENGTH_LONG).show();
+        } else
         --card3Count;
         if(textViewQuantityc3!=null)
            textViewQuantityc3.setText(Integer.toString(card3Count));
@@ -97,28 +109,30 @@ public class MenuActivity extends AppCompatActivity {
         textViewPriceTotalC3.setText(Double.toString(priceCard3));
     }
 
-
-
     public void CheckOut(View view) {
         int total = Integer.parseInt(textViewQuantity.getText().toString())
                     + Integer.parseInt(textViewQuantityc2.getText().toString())
                     + Integer.parseInt(textViewQuantityc3.getText().toString());
-       Double subTotal= (Double.parseDouble(textViewPrice.getText().toString())*Double.parseDouble(textViewQuantity.getText().toString()));
-                //(Double.parseDouble(textViewPriceC2.getText().toString())*Double.parseDouble(textViewQuantityc2.getText().toString()))
-                //+(Double.parseDouble(textViewPriceC3.getText().toString())*Double.parseDouble(textViewPriceTotalC3.getText().toString()));
-        if (Integer.parseInt(textViewQuantity.getText().toString()) <= 0 && Integer.parseInt(textViewQuantityc2.getText().toString())<=0 && Integer.parseInt(textViewQuantityc3.getText().toString())<=0) {
-            Toast.makeText(getBaseContext(), "Invalid Quantity, please add an item.", Toast.LENGTH_LONG);
+       Double subTotal= (Double.parseDouble(textViewPrice.getText().toString())*Double.parseDouble(textViewQuantity.getText().toString()))
+                +(Double.parseDouble(textViewPriceC2.getText().toString())*Double.parseDouble(textViewQuantityc2.getText().toString()))
+                +(Double.parseDouble(textViewPriceC3.getText().toString())*Double.parseDouble(textViewQuantityc3.getText().toString()));
+        if (Integer.parseInt(textViewQuantity.getText().toString()) == 0 &&
+                Integer.parseInt(textViewQuantityc2.getText().toString())==0 && Integer.parseInt(textViewQuantityc3.getText().toString())==0)
+        {
+            Toast.makeText(getBaseContext(), "No items added in cart.", Toast.LENGTH_LONG).show();
             Log.i("msg","Toast Message");
 
-        } else{
-            Intent intent = new Intent(this, CheckoutActivity.class);
-            Bundle b =new Bundle();
-            b.putString("Quantity",String.valueOf(total));
-            b.putString("SubTotal",String.valueOf(subTotal));
-            intent.putExtras(b);
-            intent.putExtras(b);
-            startActivity(intent);
-}
+        }
+        else
+            {
+                Intent intent = new Intent(this, CheckoutActivity.class);
+                Bundle b =new Bundle();
+                b.putString("Quantity",String.valueOf(total));
+                b.putString("SubTotal",String.valueOf(subTotal));
+                intent.putExtras(b);
+                intent.putExtras(b);
+                startActivity(intent);
+            }
     }
 }
 
