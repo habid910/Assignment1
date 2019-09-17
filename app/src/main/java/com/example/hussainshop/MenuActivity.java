@@ -39,11 +39,24 @@ public class MenuActivity extends AppCompatActivity {
         textViewPriceC2 = findViewById(R.id.txtPriceC2);
         textViewPriceTotalC3 = findViewById(R.id.textViewPriceTotalC3);
         textViewPriceC3 = findViewById(R.id.txtPriceC3);
+
         if(savedInstanceState!=null){
            card1Count= savedInstanceState.getInt("count");
            textViewQuantity.setText(String.valueOf(card1Count));
            double totalC1 =savedInstanceState.getDouble("price");
            textViewPriceTotal.setText(String.valueOf(totalC1));
+
+           //contents for card2.
+           card2Count = savedInstanceState.getInt("countc2");
+           textViewQuantityc2.setText(String.valueOf(card2Count));
+           double totalc2 = savedInstanceState.getDouble("pricec2");
+           textViewPriceTotalC2.setText(String.valueOf(totalc2));
+
+           //Contents of card3.
+            card3Count = savedInstanceState.getInt("countc3");
+            textViewQuantityc3.setText(String.valueOf(card3Count));
+            double totalc3 = savedInstanceState.getDouble("pricec3");
+            textViewPriceTotalC3.setText(String.valueOf(totalc3));
 
 
         }
@@ -148,6 +161,10 @@ public class MenuActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putInt("count",Integer.parseInt(textViewQuantity.getText().toString()));
         outState.putDouble("price",Double.parseDouble(textViewPriceTotal.getText().toString()));
+        outState.putInt("countc2",Integer.parseInt(textViewQuantityc2.getText().toString()));
+        outState.putDouble("pricec2",Double.parseDouble(textViewPriceTotalC2.getText().toString()));
+        outState.putInt("countc3",Integer.parseInt(textViewQuantityc3.getText().toString()));
+        outState.putDouble("pricec3",Double.parseDouble(textViewPriceTotalC3.getText().toString()));
 
     }
 
@@ -156,6 +173,10 @@ public class MenuActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         savedInstanceState.getInt("count");
         savedInstanceState.getDouble("price");
+        savedInstanceState.getInt("countc2");
+        savedInstanceState.getDouble("pricec2");
+        savedInstanceState.getInt("countc3");
+        savedInstanceState.getDouble("pricec3");
     }
 }
 

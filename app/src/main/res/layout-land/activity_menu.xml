@@ -12,7 +12,6 @@
        android:orientation="vertical">
 
 
-
        <include
            layout="@layout/card1_content"
            android:layout_width="407dp"

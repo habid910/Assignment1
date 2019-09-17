@@ -13,7 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Thank You For Using My App!"
+        android:text="@string/thank_you_for_using_my_app"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="136dp"
-        android:text="Total items"
+        android:text="@string/total_items"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -35,7 +35,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
-        android:text="SubTotal"
+        android:text="@string/subtotal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalItemTextView" />
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="32dp"
-        android:text="GST"
+        android:text="@string/gst"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSubTotal" />
 
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="140dp"
-        android:text="0"
+        android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/totalItemTextView"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
-        android:text="0.00"
+        android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/textViewSubTotal"
         app:layout_constraintTop_toBottomOf="@+id/totalQuantity" />
 
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginTop="44dp"
-        android:text="0.00"
+        android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/textViewGST"
         app:layout_constraintTop_toBottomOf="@+id/textViewSubTotalAmount" />
 
@@ -85,7 +85,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
-        android:text="TVQ"
+        android:text="@string/tvq"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGST" />
 
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="28dp"
-        android:text="0.00"
+        android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/textViewTVQ"
         app:layout_constraintTop_toBottomOf="@+id/textViewGSTAmount" />
 
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
-        android:text="Total"
+        android:text="@string/total"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTVQ" />
 
@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginTop="20dp"
-        android:text="0.00"
+        android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/textViewTotalLbl"
         app:layout_constraintTop_toBottomOf="@+id/textViewTVQAmount" />
 </android.support.constraint.ConstraintLayout>

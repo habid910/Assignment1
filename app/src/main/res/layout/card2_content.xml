@@ -5,121 +5,129 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="378dp"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/imageViewChicken"
-            android:layout_width="289dp"
-            android:layout_height="165dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/ic_generaltao"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/lblPrice"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewChicken" />
-
-        <TextView
-            android:id="@+id/txtPriceC2"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/price"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.132"
-            app:layout_constraintStart_toEndOf="@+id/textViewPrice"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewChicken" />
-
-        <TextView
-            android:id="@+id/textViewQty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/lblQuantity"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
-
-        <TextView
-            android:id="@+id/textViewQuantityc2"
-            android:layout_width="50dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="204dp"
-            android:text="@string/amountofItems"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPriceC2" />
-
-        <Button
-            android:id="@+id/btnSubtractc2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="56dp"
-            android:onClick="subtractQuantityc2"
-            android:text="@string/removeQty"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewQty" />
-
-        <Button
-            android:id="@+id/btnAddc2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="176dp"
-            android:onClick="addQuantityc2"
-            android:text="@string/addQty"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/btnSubtractc2"
-            app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc2" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Total"
-            app:layout_constraintBottom_toTopOf="@+id/btnSubtractc2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewQty"
-            app:layout_constraintVertical_bias="0.38" />
-
-        <TextView
-            android:id="@+id/textViewTotalPriceC2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="0.00"
-            app:layout_constraintBottom_toTopOf="@+id/btnAddc2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.091"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc2"
-            app:layout_constraintVertical_bias="0.48" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    </android.support.constraint.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageViewChicken"
+                android:layout_width="289dp"
+                android:layout_height="165dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/ic_generaltao"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="136dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/lblPrice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewChicken" />
+
+            <TextView
+                android:id="@+id/txtPriceC2"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/pricec2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.162"
+                app:layout_constraintStart_toEndOf="@+id/textViewPrice"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewChicken" />
+
+            <TextView
+                android:id="@+id/textViewQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/lblQuantity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
+
+            <TextView
+                android:id="@+id/textViewQuantityc2"
+                android:layout_width="50dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="160dp"
+                android:text="@string/amountofItems"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textViewQty"
+                app:layout_constraintTop_toBottomOf="@+id/txtPriceC2" />
+
+            <Button
+                android:id="@+id/btnSubtractc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="52dp"
+                android:onClick="subtractQuantityc2"
+                android:text="@string/removeQty"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewQty" />
+
+            <Button
+                android:id="@+id/btnAddc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="addQuantityc2"
+                android:text="@string/addQty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.017"
+                app:layout_constraintStart_toEndOf="@+id/btnSubtractc2"
+                app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc2" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="124dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Total"
+                app:layout_constraintBottom_toTopOf="@+id/btnSubtractc2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewQty"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/textViewTotalPriceC2"
+                android:layout_width="42dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="0.00"
+                app:layout_constraintBottom_toTopOf="@+id/btnAddc2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.037"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textViewQuantityc2"
+                app:layout_constraintVertical_bias="0.8" />
+
+
+        </android.support.constraint.ConstraintLayout>
+</FrameLayout>
 
 </android.support.v7.widget.CardView>
