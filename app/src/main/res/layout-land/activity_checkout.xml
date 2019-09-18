@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="368dp"
-        android:layout_height="120dp"
+        android:layout_width="543dp"
+        android:layout_height="69dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -23,8 +23,8 @@
         android:id="@+id/totalItemTextView"
         android:layout_width="77dp"
         android:layout_height="22dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="24dp"
         android:text="@string/total_items"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -33,8 +33,8 @@
         android:id="@+id/textViewSubTotal"
         android:layout_width="77dp"
         android:layout_height="22dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="24dp"
         android:text="@string/subtotal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalItemTextView" />
@@ -43,8 +43,8 @@
         android:id="@+id/textViewGST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="24dp"
         android:text="@string/gst"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSubTotal" />
@@ -53,18 +53,18 @@
         android:id="@+id/totalQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
         android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/totalItemTextView"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textViewSubTotalAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="37dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
         android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/textViewSubTotal"
         app:layout_constraintTop_toBottomOf="@+id/totalQuantity" />
@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/textViewGST"
         app:layout_constraintTop_toBottomOf="@+id/textViewSubTotalAmount" />
@@ -83,8 +83,8 @@
         android:id="@+id/textViewTVQ"
         android:layout_width="61dp"
         android:layout_height="22dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tvq"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGST" />
@@ -93,8 +93,8 @@
         android:id="@+id/textViewTVQAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
         android:text="@string/_0_00"
         app:layout_constraintStart_toEndOf="@+id/textViewTVQ"
         app:layout_constraintTop_toBottomOf="@+id/textViewGSTAmount" />
@@ -103,8 +103,8 @@
         android:id="@+id/textViewTotalLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="20dp"
         android:text="@string/total"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTVQ" />
