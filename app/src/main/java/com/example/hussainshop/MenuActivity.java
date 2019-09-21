@@ -40,6 +40,7 @@ public class MenuActivity extends AppCompatActivity {
         textViewPriceTotalC3 = findViewById(R.id.textViewPriceTotalC3);
         textViewPriceC3 = findViewById(R.id.txtPriceC3);
 
+        //if the values aren't null it will retrieve the quantity that was chosen previously.
         if (savedInstanceState != null) {
             card1Count = savedInstanceState.getInt("count");
             textViewQuantity.setText(String.valueOf(card1Count));
@@ -63,6 +64,7 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+ //adds the quantity of  card1
     public void addQuantity(View view) {
 
         card1Count++;
@@ -78,7 +80,7 @@ public class MenuActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
-
+//subtracts the quantity of card2
     public void subtractQuantity(View view) {
         if (Integer.parseInt(textViewQuantity.getText().toString()) == 0) {
             card1Count = 0;
@@ -91,7 +93,7 @@ public class MenuActivity extends AppCompatActivity {
             textViewPriceTotal.setText(Double.toString(priceCard1));
         }
     }
-
+//adds the quantity of card2
     public void addQuantityc2(View view) {
         ++card2Count;
         if (textViewQuantityc2 != null)
@@ -100,6 +102,7 @@ public class MenuActivity extends AppCompatActivity {
         priceCard2 = Double.parseDouble(textViewPriceC2.getText().toString()) * card2Count;
         textViewPriceTotalC2.setText(Double.toString(priceCard2));
     }
+    //subtracts the quantity of card2
 
     public void subtractQuantityc2(View view) {
         if (Integer.parseInt(textViewQuantityc2.getText().toString()) == 0) {
@@ -112,7 +115,7 @@ public class MenuActivity extends AppCompatActivity {
         priceCard2 = Double.parseDouble(textViewPriceC2.getText().toString()) * card2Count;
         textViewPriceTotalC2.setText(Double.toString(priceCard2));
     }
-
+//subtracts quantity of card3
     public void subtractQuantityC3(View view) {
         if (Integer.parseInt(textViewQuantityc3.getText().toString()) == 0) {
             card3Count = 0;
@@ -124,7 +127,7 @@ public class MenuActivity extends AppCompatActivity {
         priceCard3 = Double.parseDouble(textViewPriceC3.getText().toString()) * card3Count;
         textViewPriceTotalC3.setText(Double.toString(priceCard3));
     }
-
+//adds the quantity of card3
     public void addQuantityC3(View view) {
         card3Count++;
         if (textViewQuantityc3 != null)
@@ -133,8 +136,11 @@ public class MenuActivity extends AppCompatActivity {
         textViewPriceTotalC3.setText(Double.toString(priceCard3));
     }
 
+    // consists of all the contents which are passed through the checkout activity.
+
     public void CheckOut(View view) {
-        int total = Integer.parseInt(textViewQuantity.getText().toString())
+        //calculates the total quantity of items
+        int totalQuantity = Integer.parseInt(textViewQuantity.getText().toString())
                 + Integer.parseInt(textViewQuantityc2.getText().toString())
                 + Integer.parseInt(textViewQuantityc3.getText().toString());
         Double subTotal = (Double.parseDouble(textViewPrice.getText().toString()) * Double.parseDouble(textViewQuantity.getText().toString()))
@@ -146,16 +152,17 @@ public class MenuActivity extends AppCompatActivity {
             Log.i("msg", "Toast Message");
 
         } else {
+            //putting the data valus through an intent and a bundle
             Intent intent = new Intent(this, CheckoutActivity.class);
             Bundle b = new Bundle();
-            b.putString("Quantity", String.valueOf(total));
+            b.putString("Quantity", String.valueOf(totalQuantity));
             b.putString("SubTotal", String.valueOf(subTotal));
             intent.putExtras(b);
             intent.putExtras(b);
             startActivity(intent);
         }
     }
-
+//saves the data when rotating the screen.
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -167,7 +174,7 @@ public class MenuActivity extends AppCompatActivity {
         outState.putDouble("pricec3", Double.parseDouble(textViewPriceTotalC3.getText().toString()));
 
     }
-
+//retrieves the data when the screen is rotated.
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
